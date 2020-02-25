@@ -1,0 +1,229 @@
+﻿#main-container {
+    background-color: #c9e4bd;
+    min-height: 100vh;
+    max-width: 100%;
+    background-image: url("../../img/wallpaper4.png");
+    background-repeat: repeat-x;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#menu {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 100;
+    font-size: 3em;
+    display: none;
+}
+
+    #menu:active, #menu:focus, #menu:hover {
+        cursor: pointer;
+        color: #ac2025;
+    }
+
+#main-nav {
+    font-size: 3.3rem;
+    background-color: rgba(254, 251, 223, 0.51);
+    width: 360px;
+    margin: 0;
+    padding: 16px 0 16px 40px;
+    z-index: 5;
+    overflow: hidden;
+}
+
+    #main-nav > li {
+        margin: 32px;
+        padding: 1px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+
+        #main-nav > li > a {
+            opacity: inherit;
+        }
+
+        #main-nav > li:hover {
+            color: #ac2025;
+        }
+
+        #main-nav > li:active {
+            color: #c9e4bd;
+        }
+
+#illustration {
+    background-image: url("../../img/stroke5.png");
+}
+
+
+#graphic {
+    background-image: url("../../img/stroke3.png");
+}
+
+#motion {
+    background-image: url("../../img/stroke4.png");
+}
+
+#paintings {
+    background-image: url("../../img/stroke2.png");
+}
+
+#center {
+    padding: 5em;
+    z-index: 5;
+}
+
+#avatar {
+    background-image: url("../img/avatar1_01.png");
+    width: 228px;
+    height: 237px;
+}
+
+    #avatar:hover {
+        background-image: url("../img/avatars_02_02.png");
+    }
+
+    #avatar > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+.bio {
+    color: #454546;
+    text-align: center;
+    margin-top: .3em;
+    font-size: 3em;
+}
+
+#avatar:hover + .bio.hidden {
+    display: block;
+}
+
+#bg-img {
+    margin: 2.5em;
+}
+
+#contacts {
+    background-image: url("../img/lamp1.png");
+    background-repeat: no-repeat;
+    width: 217px;
+    height: 476px;
+    margin-top: 12em;
+    margin-left: 5em;
+    z-index: 5;
+}
+
+    #contacts > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    #contacts:hover {
+        background-image: url("../img/lamp2.png");
+    }
+
+#fly {
+    position: absolute;
+    top: 600px;
+    left: 50%;
+    z-index: 1000;
+}
+
+footer {
+    width: 100%;
+    background: url("../img/kilim4.png") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 7em;
+    color: #fff;
+    font-size: 1.2em;
+    position: relative;
+}
+
+    footer > div {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    footer p {
+        margin: 2px;
+    }
+
+@media only screen and (max-width: 1590px) {
+    #bg-img {
+        position: absolute;
+        left: 700px;
+    }
+
+    #contacts {
+        position: relative;
+        left: 10%;
+    }
+
+    footer {
+        margin-top: -20%;
+    }
+}
+
+@media only screen and (max-width: 1220px) {
+    #menu {
+        display: block;
+    }
+
+    #main-nav {
+        position: absolute;
+        z-index: 50;
+        padding-top: 1em;
+        display: none;
+    }
+
+    #bg-img {
+        left: 300px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #bg-img {
+        display: none;
+    }
+
+    #contacts {
+        margin-left: 0;
+        left: 5%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    #main-nav {
+        padding-left: 0;
+    }
+
+    #center {
+        padding-right: 0;
+        padding-left: 30px;
+    }
+
+    footer {
+        background-position: top;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #main-nav {
+        width: 100%;
+    }
+
+    #center {
+        position: absolute;
+    }
+
+    #contacts {
+        position: absolute;
+        right: 0;
+        left: unset;
+    }
+}
