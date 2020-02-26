@@ -1,10 +1,17 @@
 namespace SilviaIlieva.Web
 {
+    using AutoMapper;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Services.Data;
+    using Services.Data.Contracts;
+    using SilviaIlieva.Data;
+    using SilviaIlieva.Data.Common;
+    using SilviaIlieva.Data.Common.Contracts;
 
     public class Startup
     {
@@ -18,6 +25,13 @@ namespace SilviaIlieva.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<SilviaIlievaDbContext>(opt =>
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<ITransactionManager, TransactionManager>();
+            services.AddScoped(typeof(IDbRepository<>), typeof(DbRepository<>));
+            services.AddScoped<IIllustrationsService, IllustrationsService>();
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddControllersWithViews();
         }
 
@@ -38,11 +52,15 @@ namespace SilviaIlieva.Web
             app.UseStaticFiles();
 
             app.UseRouting();
-
+                                 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                name: "administrator",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

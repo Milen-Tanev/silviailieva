@@ -9,13 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{7E3741DB-560
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{9AB112D1-670C-4911-AECC-6B749525C35B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilviaIlieva.Web", "Web\SilviaIlieva.Web\SilviaIlieva.Web.csproj", "{605782DC-38C3-4D74-A348-D2C63A40760E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilviaIlieva.Web", "Web\SilviaIlieva.Web\SilviaIlieva.Web.csproj", "{605782DC-38C3-4D74-A348-D2C63A40760E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilviaIlieva.Data", "Data\SilviaIlieva.Data\SilviaIlieva.Data.csproj", "{C3293196-06E1-4875-8E0B-081EF4684A41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilviaIlieva.Data", "Data\SilviaIlieva.Data\SilviaIlieva.Data.csproj", "{C3293196-06E1-4875-8E0B-081EF4684A41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilviaIlieva.Data.Common", "Data\SilviaIlieva.Data.Common\SilviaIlieva.Data.Common.csproj", "{25140C77-4C24-417E-97D4-8EE33EB8BCEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilviaIlieva.Data.Common", "Data\SilviaIlieva.Data.Common\SilviaIlieva.Data.Common.csproj", "{25140C77-4C24-417E-97D4-8EE33EB8BCEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilviaIlieva.Data.Models", "Data\SilviaIlieva.Data.Models\SilviaIlieva.Data.Models.csproj", "{3B70DF52-EAA0-4802-AB2D-0249ACCC9788}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilviaIlieva.Data.Models", "Data\SilviaIlieva.Data.Models\SilviaIlieva.Data.Models.csproj", "{3B70DF52-EAA0-4802-AB2D-0249ACCC9788}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Data", "Services\Services.Data\Services.Data.csproj", "{D6402F2A-2B40-44AA-B6C9-95A05116910C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3B70DF52-EAA0-4802-AB2D-0249ACCC9788}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B70DF52-EAA0-4802-AB2D-0249ACCC9788}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B70DF52-EAA0-4802-AB2D-0249ACCC9788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6402F2A-2B40-44AA-B6C9-95A05116910C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6402F2A-2B40-44AA-B6C9-95A05116910C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6402F2A-2B40-44AA-B6C9-95A05116910C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6402F2A-2B40-44AA-B6C9-95A05116910C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{C3293196-06E1-4875-8E0B-081EF4684A41} = {139E14FE-453B-46F9-B15E-7A91C7B4A2AD}
 		{25140C77-4C24-417E-97D4-8EE33EB8BCEA} = {139E14FE-453B-46F9-B15E-7A91C7B4A2AD}
 		{3B70DF52-EAA0-4802-AB2D-0249ACCC9788} = {139E14FE-453B-46F9-B15E-7A91C7B4A2AD}
+		{D6402F2A-2B40-44AA-B6C9-95A05116910C} = {9AB112D1-670C-4911-AECC-6B749525C35B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FDCA9C31-20B3-4D44-AA9B-1AEA7D74E4D6}

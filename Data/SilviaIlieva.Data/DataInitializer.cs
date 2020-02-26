@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
-using SilviaIlieva.Data.Models;
-using System.Linq;
-
-namespace SilviaIlieva.Data
+﻿namespace SilviaIlieva.Data
 {
+    using Microsoft.AspNetCore.Identity;
+    using SilviaIlieva.Data.Models;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+
     public static class DataInitializer
     {
         public static void SeedAdministrator(SilviaIlievaDbContext dbContext, UserManager<User> userManager, RoleManager<Role> roleManager)
@@ -25,6 +27,23 @@ namespace SilviaIlieva.Data
                     userManager.AddToRoleAsync(administrator, "Administrator").Wait();
                 }
             }
+        }
+
+        public static void SeedIllustrations(SilviaIlievaDbContext dbContext)
+        {
+            var illustrationsUrl = @"..\..\src\img-ill";
+            var illustrations = new List<Illustration>();
+            string[] images = Directory.GetFiles(illustrationsUrl, "*.jpg");
+
+            //foreach (var item in images)
+            //{
+            //    var fullPath = 
+
+            //    var img = new Illustration()
+            //    {
+            //        Name = item.Trim();
+            //    };
+            //}
         }
     }
 }

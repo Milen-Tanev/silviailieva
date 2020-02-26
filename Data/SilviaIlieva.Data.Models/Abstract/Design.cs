@@ -12,9 +12,8 @@
         public string Name { get; set; }
 
         [Required]
-        public byte[] Image { get; set; }
+        public string ImageUrl { get; set; }
 
-        [Required]
         public bool IsDeleted { get; set; }
     }
 }

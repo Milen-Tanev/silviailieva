@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Services.Data.Models.IllustrationModel>
+
+@{
+    ViewData["Title"] = "Illustrations";
+}
+
+<h1>Illustrations</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@foreach (var item in Model)
+{
+    var src = "~/images/" + item.Name + ".jpg";
+    <div>
+        <div>
+            @Html.DisplayFor(modelItem => item.Name)
+        </div>
+        <div>
+            <img src="@src" alt="@item.Name" asp-append-version="true" />
+        </div>
+    </div>
+}
