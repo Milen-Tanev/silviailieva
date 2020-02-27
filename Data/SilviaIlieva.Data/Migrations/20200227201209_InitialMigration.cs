@@ -107,6 +107,20 @@ namespace SilviaIlieva.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UtilityData",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Value = table.Column<string>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UtilityData", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -212,6 +226,46 @@ namespace SilviaIlieva.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "0909A2A6-81A1-4074-B7F8-C0DC4E7392AB", "362343cd-f302-4e62-a4aa-71b4e64cdabf", "Administrator", "ADMINISTRATOR" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "9B5FA88B-48C2-435B-B140-5212E669A34B", 0, "1148e1d5-df5c-4bef-8a0e-0643ea91cae6", null, false, false, null, null, "MILEN", "AQAAAAEAACcQAAAAEEwgQ4Mc/BWkkDMS/fWNat9JLvdu9IyjX1P3yXE7ZIwoX1fJHSaIaQrl0s6bW6IGoQ==", null, false, "", false, "Milen" });
+
+            migrationBuilder.InsertData(
+                table: "UtilityData",
+                columns: new[] { "Id", "IsDeleted", "Name", "Value" },
+                values: new object[,]
+                {
+                    { 1, false, "About", @"
+                <h1>About me</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pharetra tellus eu dolor convallis faucibus. Quisque hendrerit, orci a sodales convallis, neque justo venenatis diam, vitae semper mauris metus vitae nulla. Etiam at est convallis, ultrices odio in, sagittis libero. Praesent id lorem molestie, commodo ex sit amet, feugiat neque. Sed interdum metus a arcu dapibus suscipit. Vestibulum cursus vitae eros et dapibus. Fusce volutpat commodo ante tempus placerat. Nulla congue leo ac lectus vestibulum, at cursus elit vulputate. Sed pharetra faucibus ante. Donec fringilla orci ut hendrerit vulputate. Phasellus vel lectus ac turpis scelerisque vehicula eget dapibus dolor.</p>
+                <p>Nulla sit amet mi suscipit, finibus sapien eu, porttitor nulla. Mauris pretium fermentum lorem, ut tincidunt mi sodales vestibulum. Quisque et dapibus dui, eu feugiat enim. Nullam laoreet laoreet tellus, in tempus massa vestibulum eget. Donec pretium elit eu justo egestas congue. Morbi eget quam congue, hendrerit mauris sit amet, accumsan tortor. Phasellus urna lorem, elementum a massa id, dictum facilisis nisl. Nullam tempor laoreet tincidunt. Vivamus et bibendum enim, a sagittis urna. Aenean elementum vel risus a sodales. Integer fringilla interdum orci, at fringilla justo rutrum vitae. Nulla facilisis pretium lacus, quis efficitur diam venenatis at. Nulla ultrices ullamcorper sem, ac accumsan arcu.</p>
+                <p>Morbi dictum et arcu a congue. In a nibh quis justo aliquet luctus. Praesent volutpat neque malesuada leo efficitur, eu tristique velit varius. In non nibh eleifend, porttitor enim sed, bibendum tortor. Quisque posuere sapien vel efficitur interdum. Maecenas cursus, mi eget aliquet egestas, est felis vestibulum nisi, ac gravida lectus augue eget purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque ornare diam turpis, in molestie justo tempus in. Integer porta condimentum varius. Aliquam rutrum mauris non augue accumsan vulputate. In feugiat lorem massa, non sollicitudin massa porta sed. Donec sapien lectus, scelerisque auctor tempus nec, fermentum ac velit. Fusce ac rutrum neque, quis commodo lacus. Vestibulum condimentum scelerisque tellus ac mattis. Aenean tellus nunc, feugiat ut leo maximus, viverra tincidunt ligula.</p>
+                <p>Integer id condimentum dui, a porttitor ex. Ut commodo tortor eget nulla imperdiet dignissim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam faucibus arcu sit amet vehicula sodales. Nullam at congue nibh, ac aliquet elit. Praesent ut turpis interdum, dictum lorem in, luctus nibh. Etiam dignissim tincidunt sem, quis dictum ipsum aliquam ac. Integer consequat non tortor eget condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo porttitor lacus a elementum. Praesent imperdiet sodales convallis. Vestibulum consectetur nulla lectus, ut ultrices ipsum pellentesque quis.</p>" },
+                    { 2, false, "Disclaimer", @"
+                <h1>Disclaimer</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pharetra tellus eu dolor convallis faucibus. Quisque hendrerit, orci a sodales convallis, neque justo venenatis diam, vitae semper mauris metus vitae nulla. Etiam at est convallis, ultrices odio in, sagittis libero. Praesent id lorem molestie, commodo ex sit amet, feugiat neque. Sed interdum metus a arcu dapibus suscipit. Vestibulum cursus vitae eros et dapibus. Fusce volutpat commodo ante tempus placerat. Nulla congue leo ac lectus vestibulum, at cursus elit vulputate. Sed pharetra faucibus ante. Donec fringilla orci ut hendrerit vulputate. Phasellus vel lectus ac turpis scelerisque vehicula eget dapibus dolor.</p>
+                <p>Nulla sit amet mi suscipit, finibus sapien eu, porttitor nulla. Mauris pretium fermentum lorem, ut tincidunt mi sodales vestibulum. Quisque et dapibus dui, eu feugiat enim. Nullam laoreet laoreet tellus, in tempus massa vestibulum eget. Donec pretium elit eu justo egestas congue. Morbi eget quam congue, hendrerit mauris sit amet, accumsan tortor. Phasellus urna lorem, elementum a massa id, dictum facilisis nisl. Nullam tempor laoreet tincidunt. Vivamus et bibendum enim, a sagittis urna. Aenean elementum vel risus a sodales. Integer fringilla interdum orci, at fringilla justo rutrum vitae. Nulla facilisis pretium lacus, quis efficitur diam venenatis at. Nulla ultrices ullamcorper sem, ac accumsan arcu.</p>
+                <p>Morbi dictum et arcu a congue. In a nibh quis justo aliquet luctus. Praesent volutpat neque malesuada leo efficitur, eu tristique velit varius. In non nibh eleifend, porttitor enim sed, bibendum tortor. Quisque posuere sapien vel efficitur interdum. Maecenas cursus, mi eget aliquet egestas, est felis vestibulum nisi, ac gravida lectus augue eget purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque ornare diam turpis, in molestie justo tempus in. Integer porta condimentum varius. Aliquam rutrum mauris non augue accumsan vulputate. In feugiat lorem massa, non sollicitudin massa porta sed. Donec sapien lectus, scelerisque auctor tempus nec, fermentum ac velit. Fusce ac rutrum neque, quis commodo lacus. Vestibulum condimentum scelerisque tellus ac mattis. Aenean tellus nunc, feugiat ut leo maximus, viverra tincidunt ligula.</p>
+                <p>Integer id condimentum dui, a porttitor ex. Ut commodo tortor eget nulla imperdiet dignissim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam faucibus arcu sit amet vehicula sodales. Nullam at congue nibh, ac aliquet elit. Praesent ut turpis interdum, dictum lorem in, luctus nibh. Etiam dignissim tincidunt sem, quis dictum ipsum aliquam ac. Integer consequat non tortor eget condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo porttitor lacus a elementum. Praesent imperdiet sodales convallis. Vestibulum consectetur nulla lectus, ut ultrices ipsum pellentesque quis.</p>" },
+                    { 3, false, "Cookies", @"
+                <h1>Cookies</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pharetra tellus eu dolor convallis faucibus. Quisque hendrerit, orci a sodales convallis, neque justo venenatis diam, vitae semper mauris metus vitae nulla. Etiam at est convallis, ultrices odio in, sagittis libero. Praesent id lorem molestie, commodo ex sit amet, feugiat neque. Sed interdum metus a arcu dapibus suscipit. Vestibulum cursus vitae eros et dapibus. Fusce volutpat commodo ante tempus placerat. Nulla congue leo ac lectus vestibulum, at cursus elit vulputate. Sed pharetra faucibus ante. Donec fringilla orci ut hendrerit vulputate. Phasellus vel lectus ac turpis scelerisque vehicula eget dapibus dolor.</p>
+                <p>Nulla sit amet mi suscipit, finibus sapien eu, porttitor nulla. Mauris pretium fermentum lorem, ut tincidunt mi sodales vestibulum. Quisque et dapibus dui, eu feugiat enim. Nullam laoreet laoreet tellus, in tempus massa vestibulum eget. Donec pretium elit eu justo egestas congue. Morbi eget quam congue, hendrerit mauris sit amet, accumsan tortor. Phasellus urna lorem, elementum a massa id, dictum facilisis nisl. Nullam tempor laoreet tincidunt. Vivamus et bibendum enim, a sagittis urna. Aenean elementum vel risus a sodales. Integer fringilla interdum orci, at fringilla justo rutrum vitae. Nulla facilisis pretium lacus, quis efficitur diam venenatis at. Nulla ultrices ullamcorper sem, ac accumsan arcu.</p>
+                <p>Morbi dictum et arcu a congue. In a nibh quis justo aliquet luctus. Praesent volutpat neque malesuada leo efficitur, eu tristique velit varius. In non nibh eleifend, porttitor enim sed, bibendum tortor. Quisque posuere sapien vel efficitur interdum. Maecenas cursus, mi eget aliquet egestas, est felis vestibulum nisi, ac gravida lectus augue eget purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque ornare diam turpis, in molestie justo tempus in. Integer porta condimentum varius. Aliquam rutrum mauris non augue accumsan vulputate. In feugiat lorem massa, non sollicitudin massa porta sed. Donec sapien lectus, scelerisque auctor tempus nec, fermentum ac velit. Fusce ac rutrum neque, quis commodo lacus. Vestibulum condimentum scelerisque tellus ac mattis. Aenean tellus nunc, feugiat ut leo maximus, viverra tincidunt ligula.</p>
+                <p>Integer id condimentum dui, a porttitor ex. Ut commodo tortor eget nulla imperdiet dignissim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam faucibus arcu sit amet vehicula sodales. Nullam at congue nibh, ac aliquet elit. Praesent ut turpis interdum, dictum lorem in, luctus nibh. Etiam dignissim tincidunt sem, quis dictum ipsum aliquam ac. Integer consequat non tortor eget condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo porttitor lacus a elementum. Praesent imperdiet sodales convallis. Vestibulum consectetur nulla lectus, ut ultrices ipsum pellentesque quis.</p>" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "UserId", "RoleId" },
+                values: new object[] { "9B5FA88B-48C2-435B-B140-5212E669A34B", "0909A2A6-81A1-4074-B7F8-C0DC4E7392AB" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -280,6 +334,9 @@ namespace SilviaIlieva.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Paintings");
+
+            migrationBuilder.DropTable(
+                name: "UtilityData");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

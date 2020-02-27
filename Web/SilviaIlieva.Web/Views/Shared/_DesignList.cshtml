@@ -1,0 +1,14 @@
+﻿@model IEnumerable<SilviaIlieva.Services.Data.Models.DesignModel>
+
+@foreach (var illustration in Model)
+{
+    var src = "~/images/" + illustration.Name + ".jpg";
+    <div>
+        <div>
+            @Html.DisplayFor(modelItem => illustration.Name)
+        </div>
+        <div>
+            <img src="@src" alt="@illustration.Name" asp-append-version="true" />
+        </div>
+    </div>
+}

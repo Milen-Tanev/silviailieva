@@ -10,7 +10,7 @@ using SilviaIlieva.Data;
 namespace SilviaIlieva.Data.Migrations
 {
     [DbContext(typeof(SilviaIlievaDbContext))]
-    [Migration("20200226081439_InitialMigration")]
+    [Migration("20200227201209_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -104,6 +104,13 @@ namespace SilviaIlieva.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "9B5FA88B-48C2-435B-B140-5212E669A34B",
+                            RoleId = "0909A2A6-81A1-4074-B7F8-C0DC4E7392AB"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -242,6 +249,15 @@ namespace SilviaIlieva.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "0909A2A6-81A1-4074-B7F8-C0DC4E7392AB",
+                            ConcurrencyStamp = "362343cd-f302-4e62-a4aa-71b4e64cdabf",
+                            Name = "Administrator",
+                            NormalizedName = "ADMINISTRATOR"
+                        });
                 });
 
             modelBuilder.Entity("SilviaIlieva.Data.Models.User", b =>
@@ -307,6 +323,79 @@ namespace SilviaIlieva.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "9B5FA88B-48C2-435B-B140-5212E669A34B",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "1148e1d5-df5c-4bef-8a0e-0643ea91cae6",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "MILEN",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEwgQ4Mc/BWkkDMS/fWNat9JLvdu9IyjX1P3yXE7ZIwoX1fJHSaIaQrl0s6bW6IGoQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "Milen"
+                        });
+                });
+
+            modelBuilder.Entity("SilviaIlieva.Data.Models.UtilityData", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UtilityData");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IsDeleted = false,
+                            Name = "About",
+                            Value = @"
+<h1>About me</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pharetra tellus eu dolor convallis faucibus. Quisque hendrerit, orci a sodales convallis, neque justo venenatis diam, vitae semper mauris metus vitae nulla. Etiam at est convallis, ultrices odio in, sagittis libero. Praesent id lorem molestie, commodo ex sit amet, feugiat neque. Sed interdum metus a arcu dapibus suscipit. Vestibulum cursus vitae eros et dapibus. Fusce volutpat commodo ante tempus placerat. Nulla congue leo ac lectus vestibulum, at cursus elit vulputate. Sed pharetra faucibus ante. Donec fringilla orci ut hendrerit vulputate. Phasellus vel lectus ac turpis scelerisque vehicula eget dapibus dolor.</p>
+<p>Nulla sit amet mi suscipit, finibus sapien eu, porttitor nulla. Mauris pretium fermentum lorem, ut tincidunt mi sodales vestibulum. Quisque et dapibus dui, eu feugiat enim. Nullam laoreet laoreet tellus, in tempus massa vestibulum eget. Donec pretium elit eu justo egestas congue. Morbi eget quam congue, hendrerit mauris sit amet, accumsan tortor. Phasellus urna lorem, elementum a massa id, dictum facilisis nisl. Nullam tempor laoreet tincidunt. Vivamus et bibendum enim, a sagittis urna. Aenean elementum vel risus a sodales. Integer fringilla interdum orci, at fringilla justo rutrum vitae. Nulla facilisis pretium lacus, quis efficitur diam venenatis at. Nulla ultrices ullamcorper sem, ac accumsan arcu.</p>
+<p>Morbi dictum et arcu a congue. In a nibh quis justo aliquet luctus. Praesent volutpat neque malesuada leo efficitur, eu tristique velit varius. In non nibh eleifend, porttitor enim sed, bibendum tortor. Quisque posuere sapien vel efficitur interdum. Maecenas cursus, mi eget aliquet egestas, est felis vestibulum nisi, ac gravida lectus augue eget purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque ornare diam turpis, in molestie justo tempus in. Integer porta condimentum varius. Aliquam rutrum mauris non augue accumsan vulputate. In feugiat lorem massa, non sollicitudin massa porta sed. Donec sapien lectus, scelerisque auctor tempus nec, fermentum ac velit. Fusce ac rutrum neque, quis commodo lacus. Vestibulum condimentum scelerisque tellus ac mattis. Aenean tellus nunc, feugiat ut leo maximus, viverra tincidunt ligula.</p>
+<p>Integer id condimentum dui, a porttitor ex. Ut commodo tortor eget nulla imperdiet dignissim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam faucibus arcu sit amet vehicula sodales. Nullam at congue nibh, ac aliquet elit. Praesent ut turpis interdum, dictum lorem in, luctus nibh. Etiam dignissim tincidunt sem, quis dictum ipsum aliquam ac. Integer consequat non tortor eget condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo porttitor lacus a elementum. Praesent imperdiet sodales convallis. Vestibulum consectetur nulla lectus, ut ultrices ipsum pellentesque quis.</p>"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            IsDeleted = false,
+                            Name = "Disclaimer",
+                            Value = @"
+<h1>Disclaimer</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pharetra tellus eu dolor convallis faucibus. Quisque hendrerit, orci a sodales convallis, neque justo venenatis diam, vitae semper mauris metus vitae nulla. Etiam at est convallis, ultrices odio in, sagittis libero. Praesent id lorem molestie, commodo ex sit amet, feugiat neque. Sed interdum metus a arcu dapibus suscipit. Vestibulum cursus vitae eros et dapibus. Fusce volutpat commodo ante tempus placerat. Nulla congue leo ac lectus vestibulum, at cursus elit vulputate. Sed pharetra faucibus ante. Donec fringilla orci ut hendrerit vulputate. Phasellus vel lectus ac turpis scelerisque vehicula eget dapibus dolor.</p>
+<p>Nulla sit amet mi suscipit, finibus sapien eu, porttitor nulla. Mauris pretium fermentum lorem, ut tincidunt mi sodales vestibulum. Quisque et dapibus dui, eu feugiat enim. Nullam laoreet laoreet tellus, in tempus massa vestibulum eget. Donec pretium elit eu justo egestas congue. Morbi eget quam congue, hendrerit mauris sit amet, accumsan tortor. Phasellus urna lorem, elementum a massa id, dictum facilisis nisl. Nullam tempor laoreet tincidunt. Vivamus et bibendum enim, a sagittis urna. Aenean elementum vel risus a sodales. Integer fringilla interdum orci, at fringilla justo rutrum vitae. Nulla facilisis pretium lacus, quis efficitur diam venenatis at. Nulla ultrices ullamcorper sem, ac accumsan arcu.</p>
+<p>Morbi dictum et arcu a congue. In a nibh quis justo aliquet luctus. Praesent volutpat neque malesuada leo efficitur, eu tristique velit varius. In non nibh eleifend, porttitor enim sed, bibendum tortor. Quisque posuere sapien vel efficitur interdum. Maecenas cursus, mi eget aliquet egestas, est felis vestibulum nisi, ac gravida lectus augue eget purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque ornare diam turpis, in molestie justo tempus in. Integer porta condimentum varius. Aliquam rutrum mauris non augue accumsan vulputate. In feugiat lorem massa, non sollicitudin massa porta sed. Donec sapien lectus, scelerisque auctor tempus nec, fermentum ac velit. Fusce ac rutrum neque, quis commodo lacus. Vestibulum condimentum scelerisque tellus ac mattis. Aenean tellus nunc, feugiat ut leo maximus, viverra tincidunt ligula.</p>
+<p>Integer id condimentum dui, a porttitor ex. Ut commodo tortor eget nulla imperdiet dignissim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam faucibus arcu sit amet vehicula sodales. Nullam at congue nibh, ac aliquet elit. Praesent ut turpis interdum, dictum lorem in, luctus nibh. Etiam dignissim tincidunt sem, quis dictum ipsum aliquam ac. Integer consequat non tortor eget condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo porttitor lacus a elementum. Praesent imperdiet sodales convallis. Vestibulum consectetur nulla lectus, ut ultrices ipsum pellentesque quis.</p>"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            IsDeleted = false,
+                            Name = "Cookies",
+                            Value = @"
+<h1>Cookies</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pharetra tellus eu dolor convallis faucibus. Quisque hendrerit, orci a sodales convallis, neque justo venenatis diam, vitae semper mauris metus vitae nulla. Etiam at est convallis, ultrices odio in, sagittis libero. Praesent id lorem molestie, commodo ex sit amet, feugiat neque. Sed interdum metus a arcu dapibus suscipit. Vestibulum cursus vitae eros et dapibus. Fusce volutpat commodo ante tempus placerat. Nulla congue leo ac lectus vestibulum, at cursus elit vulputate. Sed pharetra faucibus ante. Donec fringilla orci ut hendrerit vulputate. Phasellus vel lectus ac turpis scelerisque vehicula eget dapibus dolor.</p>
+<p>Nulla sit amet mi suscipit, finibus sapien eu, porttitor nulla. Mauris pretium fermentum lorem, ut tincidunt mi sodales vestibulum. Quisque et dapibus dui, eu feugiat enim. Nullam laoreet laoreet tellus, in tempus massa vestibulum eget. Donec pretium elit eu justo egestas congue. Morbi eget quam congue, hendrerit mauris sit amet, accumsan tortor. Phasellus urna lorem, elementum a massa id, dictum facilisis nisl. Nullam tempor laoreet tincidunt. Vivamus et bibendum enim, a sagittis urna. Aenean elementum vel risus a sodales. Integer fringilla interdum orci, at fringilla justo rutrum vitae. Nulla facilisis pretium lacus, quis efficitur diam venenatis at. Nulla ultrices ullamcorper sem, ac accumsan arcu.</p>
+<p>Morbi dictum et arcu a congue. In a nibh quis justo aliquet luctus. Praesent volutpat neque malesuada leo efficitur, eu tristique velit varius. In non nibh eleifend, porttitor enim sed, bibendum tortor. Quisque posuere sapien vel efficitur interdum. Maecenas cursus, mi eget aliquet egestas, est felis vestibulum nisi, ac gravida lectus augue eget purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque ornare diam turpis, in molestie justo tempus in. Integer porta condimentum varius. Aliquam rutrum mauris non augue accumsan vulputate. In feugiat lorem massa, non sollicitudin massa porta sed. Donec sapien lectus, scelerisque auctor tempus nec, fermentum ac velit. Fusce ac rutrum neque, quis commodo lacus. Vestibulum condimentum scelerisque tellus ac mattis. Aenean tellus nunc, feugiat ut leo maximus, viverra tincidunt ligula.</p>
+<p>Integer id condimentum dui, a porttitor ex. Ut commodo tortor eget nulla imperdiet dignissim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam faucibus arcu sit amet vehicula sodales. Nullam at congue nibh, ac aliquet elit. Praesent ut turpis interdum, dictum lorem in, luctus nibh. Etiam dignissim tincidunt sem, quis dictum ipsum aliquam ac. Integer consequat non tortor eget condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo porttitor lacus a elementum. Praesent imperdiet sodales convallis. Vestibulum consectetur nulla lectus, ut ultrices ipsum pellentesque quis.</p>"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

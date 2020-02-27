@@ -1,6 +1,6 @@
-﻿namespace Services.Data.Models
+﻿namespace SilviaIlieva.Services.Data.Models
 {
-    public class IllustrationModel
+    public class DesignModel
     {
         public string Name { get; set; }
 

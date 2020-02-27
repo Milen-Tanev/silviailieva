@@ -1,0 +1,14 @@
+﻿@model SilviaIlieva.Services.Data.Models.UtilityDataModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Index";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/site.css" />
+}
+
+<h1>About</h1>
+
+@Html.Raw(Model.Value)

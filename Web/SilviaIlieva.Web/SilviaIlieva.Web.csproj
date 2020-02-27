@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -28,7 +28,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\SilviaIlieva.Data.Common\SilviaIlieva.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\SilviaIlieva.Data\SilviaIlieva.Data.csproj" />
-    <ProjectReference Include="..\..\Services\Services.Data\Services.Data.csproj" />
+    <ProjectReference Include="..\..\Services\Services.Data\SilviaIlieva.Services.Data.csproj" />
   </ItemGroup>
 
 </Project>

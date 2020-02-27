@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilviaIlieva.Data.Common", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilviaIlieva.Data.Models", "Data\SilviaIlieva.Data.Models\SilviaIlieva.Data.Models.csproj", "{3B70DF52-EAA0-4802-AB2D-0249ACCC9788}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Data", "Services\Services.Data\Services.Data.csproj", "{D6402F2A-2B40-44AA-B6C9-95A05116910C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilviaIlieva.Services.Data", "Services\Services.Data\SilviaIlieva.Services.Data.csproj", "{D6402F2A-2B40-44AA-B6C9-95A05116910C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

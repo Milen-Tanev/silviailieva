@@ -16,3 +16,35 @@ a {
 .hidden {
     display: none;
 }
+
+#main-container {
+    background-color: #c9e4bd;
+    min-height: 100vh;
+    max-width: 100%;
+    background-image: url("../../img/wallpaper4.png");
+    background-repeat: repeat-x;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+footer {
+    width: 100%;
+    background: url("../img/kilim4.png") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 7em;
+    color: #fff;
+    font-size: 1.2em;
+    position: relative;
+}
+
+footer > div {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    margin: 2px;
+}

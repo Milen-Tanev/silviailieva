@@ -1,48 +1,36 @@
 ﻿@{
-    Layout = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Home";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link href="https://fonts.googleapis.com/css?family=Dokdo" rel="stylesheet">
+@section Styles {
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/home.css" />
-    <link rel="icon" type="img/png" href="~/favicon.png" />
+}
+
+@section Scripts {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations-next-lite.min.js" defer></script>
     <script src="~/js/home.js" asp-append-version="true" defer></script>
-</head>
-<body>
-    <div id="main-container">
-        <nav>
-            <div id="menu">Menu</div>
-            <ul id="main-nav">
-                <li id="illustration"><a href="/illustrations">ILLustRatiOn</a></li>
-                <li id="graphic"><a href="/graphics">GRaPhic</a></li>
-                <li id="motion"><a href="/motions">MOtioN</a></li>
-                <li id="paintings"><a href="/paintings">PainTiNgS</a></li>
-            </ul>
-        </nav>
-        <div id="center">
-            <div id="avatar">
-                <a href="/about"></a>
-            </div>
-            <a class="bio hidden" href="/about">Bio</a>
-        </div>
-        <img src="~/img/tri-kartinki.png" width="255" height="435" alt="paintings of cat, clock and flower on the wall" id="bg-img" />
-        <div id="contacts">
-            <a href="/contacts"></a>
-        </div>
-        <footer>
-            <div>
-                <p>Design by: Silvia Ilieva</p>
-                <p>Developed by by: Milen Tanev</p>
-                <p>&copy; 2019 all rights reserved</p>
-            </div>
-        </footer>
+}
+
+@section Header {
+    <nav>
+        <div id="menu">Menu</div>
+        <ul id="main-nav">
+            <li id="illustration"><a href="/illustrations">ILLustRatiOn</a></li>
+            <li id="graphic"><a href="/graphics">GRaPhic</a></li>
+            <li id="motion"><a href="/motions">MOtioN</a></li>
+            <li id="paintings"><a href="/paintings">PainTiNgS</a></li>
+        </ul>
+    </nav>
+}
+<div id="center">
+    <div id="avatar">
+        <a href="/about"></a>
     </div>
-    <img src="~/img/muha.png" width="50" height="61" alt="a fly flying around" id="fly" />
-</body>
-</html>
+    <a class="bio hidden" href="/about">Bio</a>
+</div>
+<img src="~/img/tri-kartinki.png" width="255" height="435" alt="paintings of cat, clock and flower on the wall" id="bg-img" />
+<div id="contacts">
+    <a href="/contacts"></a>
+</div>
+<img src="~/img/muha.png" width="50" height="61" alt="a fly flying around" id="fly" />

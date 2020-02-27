@@ -8,10 +8,12 @@ namespace SilviaIlieva.Web
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using Services.Data;
+    using Services.Data.AutoMapper;
     using Services.Data.Contracts;
     using SilviaIlieva.Data;
     using SilviaIlieva.Data.Common;
     using SilviaIlieva.Data.Common.Contracts;
+    using System.Reflection;
 
     public class Startup
     {
@@ -29,8 +31,12 @@ namespace SilviaIlieva.Web
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<ITransactionManager, TransactionManager>();
             services.AddScoped(typeof(IDbRepository<>), typeof(DbRepository<>));
-            services.AddScoped<IIllustrationsService, IllustrationsService>();
-            services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<IIllustrationService, IllustrationService>();
+            services.AddScoped<IMotionService, MotionService>();
+            services.AddScoped<IPaintingService, PaintingService>();
+            services.AddScoped<IGraphicService, GraphicService>();
+            services.AddScoped<IUtilityDataService, UtilityDataService>();
+            services.AddAutoMapper(Assembly.GetAssembly(typeof(UserProfile)));
 
             services.AddControllersWithViews();
         }
