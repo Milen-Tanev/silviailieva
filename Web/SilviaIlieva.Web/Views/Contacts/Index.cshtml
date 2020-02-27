@@ -1,4 +1,4 @@
-﻿
+﻿@model ContactViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Contact me";
@@ -10,17 +10,18 @@
 
 <h1>Contact me</h1>
 
-<form action="/contacts/send" method="post">
+<form action="/contacts/index" method="post">
     <div>
         <label for="name">Name*</label>
-        <input id="name" name="name" type="text" required />
+        @Html.TextBoxFor(m => m.Name, new { id="name" })
     </div>
     <div>
         <label for="email">Email*</label>
-        <input id="email" name="email" type="email" />
+        @Html.TextBoxFor(m => m.Email, new { id = "email", type="email"})
     </div>
     <div>
         <label for="message">Message</label>
-        <textarea id="message" name="message"></textarea>
+        @Html.TextAreaFor(m => m.Message, new { id = "message" })
     </div>
+    <input type="submit" />
 </form>

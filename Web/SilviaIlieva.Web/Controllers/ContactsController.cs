@@ -1,16 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-
-namespace SilviaIlieva.Web.Controllers
+﻿namespace SilviaIlieva.Web.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using SilviaIlieva.Web.Models;
+
     public class ContactsController : Controller
     {
+        [HttpGet]
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(ContactViewModel contactViewModel)
+        {
+            return this.View();
         }
     }
 }
