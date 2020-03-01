@@ -29,6 +29,7 @@
     <ProjectReference Include="..\..\Data\SilviaIlieva.Data.Common\SilviaIlieva.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\SilviaIlieva.Data\SilviaIlieva.Data.csproj" />
     <ProjectReference Include="..\..\Services\Services.Data\SilviaIlieva.Services.Data.csproj" />
+    <ProjectReference Include="..\..\Services\SilviaIlieva.Services.External\SilviaIlieva.Services.External.csproj" />
   </ItemGroup>
 
 </Project>

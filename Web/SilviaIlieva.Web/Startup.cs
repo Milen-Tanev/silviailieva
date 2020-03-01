@@ -13,6 +13,9 @@ namespace SilviaIlieva.Web
     using SilviaIlieva.Data;
     using SilviaIlieva.Data.Common;
     using SilviaIlieva.Data.Common.Contracts;
+    using SilviaIlieva.Services.External;
+    using SilviaIlieva.Services.External.Configuration;
+    using SilviaIlieva.Services.External.Contracts;
     using System.Reflection;
 
     public class Startup
@@ -27,6 +30,11 @@ namespace SilviaIlieva.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var emailConfig = Configuration
+                .GetSection("EmailConfiguration")
+                .Get<EmailConfiguration>();
+            services.AddSingleton(emailConfig);
+
             services.AddDbContext<SilviaIlievaDbContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<ITransactionManager, TransactionManager>();
@@ -36,6 +44,7 @@ namespace SilviaIlieva.Web
             services.AddScoped<IPaintingService, PaintingService>();
             services.AddScoped<IGraphicService, GraphicService>();
             services.AddScoped<IUtilityDataService, UtilityDataService>();
+            services.AddScoped<IEmailSender, EmailSender>();
             services.AddAutoMapper(Assembly.GetAssembly(typeof(UserProfile)));
 
             services.AddControllersWithViews();
